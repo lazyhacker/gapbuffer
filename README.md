@@ -15,6 +15,6 @@ More details on this technique can be found in Craig Finseth's ["The Craft of Te
   - [editech.4.Z](http://www.lazyhacker.com/editech.4.Z)
   - [editech.5.Z](http://www.lazyhacker.com/editech.5.Z)
 
-Another very useful text is Ray Valdes' article, "Text Editors: Algorithm and Architectures", published in Dr. Dobb's Journal.
+Another very useful text is Ray Valdes' article, ["Text Editors: Algorithm and Architectures"](http://www.drdobbs.com/architecture-and-design/text-editors-algorithms-and-architecture/184408975), published in Dr. Dobb's Journal.
 
 What I've included is the source for a basic C++ implementation of gap buffer class which I hope will be useful to others. I don't have any restrictions on the use of this code other than that you include my name with any derived work. This is just my small contribution to the open source community and I hope to be able to offer more in the future, but for now I'm starting small. Any improvements, suggestions or advice are always appreciated.
