@@ -32,7 +32,7 @@
 
 using namespace std;
 
-GapBuffer::GapBuffer(int gsize) : GAP_SIZE(gsize)
+GapBuffer::GapBuffer(int gsize) : GAP_SIZE(gsize), buffer(NULL)
 {
     InitBuffer(GAP_SIZE);
 
@@ -242,7 +242,7 @@ int GapBuffer::SizeOfGap()
 unsigned int GapBuffer::PointOffset()
 {
 
-    if (point > gapend) {
+    if (point >= gapend) {
         return ((point - buffer) - (gapend - gapstart));
     } else {
         return (point - buffer);
@@ -308,10 +308,16 @@ char GapBuffer::NextChar()
     // point should not be in the gap.
     if (point == gapstart) {
         point = gapend;
-        return *point;
     } 
 
-    return *(++point);    
+    point++;
+
+    // point should not be in the gap.
+    if (point == gapstart) {
+        point = gapend;
+    }
+
+    return *point;
 
 }
 
@@ -363,7 +369,7 @@ void GapBuffer::DeleteChars(unsigned int size)
     gapend += size;
 }
 
-void GapBuffer::InsertString(char *string, unsigned int length)
+void GapBuffer::InsertString(const char *string, unsigned int length)
 {
 
     MoveGapToPoint();
