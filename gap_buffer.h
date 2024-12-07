@@ -140,7 +140,7 @@ public:
      *  Inserts a length size string 
      *  at point.
      */
-    void InsertString(char *string, unsigned int length);
+    void InsertString(const char *string, unsigned int length);
 
     /*
      *  Prints out the current buffer from start
